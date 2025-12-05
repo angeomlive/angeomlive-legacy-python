@@ -1,0 +1,24 @@
+{% extends "taskapp/taskapp-base.html" %}
+
+{% block title %}
+{{title}}
+{% endblock %}
+
+{% block body_main %}
+<a href="/" id="site-scroll-top" class="show">
+	<img src="/media/home.png" imgfiled="img" >
+	<i class="fa fa-home fa-fw" aria-hidden="true">
+	<span class="fa fa-chevron-up"></span>
+</a>
+<div class="t211">
+<div class="t-container">
+{% for section in sections %}
+	<div class=sections-child-item">
+		<a href="/section/{{ section.id }}/">
+			<div class="t-title t-descr_xxxl t211__title" field="title2">{{ section.name }}</div>
+		</a>
+	</div>
+{% endfor %}
+</div>
+</div>
+{% endblock %}

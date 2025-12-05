@@ -1,0 +1,57 @@
+{% extends "polls/task-base.html" %}
+
+{% block title %}
+{% endblock %}
+
+
+{% block task %}
+
+{% if task %}
+	<h4>№{{ task.id }}. Вопрос: {{ task.task_text }}</h4>
+{% else %}
+    <p>No cases are available.</p>
+{% endif %}
+
+{%	if task.task_img_link %}
+	<img src="{{ task.task_img_link }}" alt="My image"/><br>
+{% else %}
+{%	endif	%}
+
+{%	if task.image %}
+{% load static %}
+	<img src="{{ task.image.url }}" alt="My image"/>
+{% else %}
+{%	endif	%}
+{% endblock %}
+
+
+{% block vars %}
+{% if task_type_test %}
+	<h4>Варианты ответа:</h4>
+	<form action="/result/" method="post" required>
+	{% csrf_token %}
+	{% for var in task.variant.all %}
+    	<input type="radio" name="choice" id="choice{{ var.id }}" value="{{ var.id }}" required />
+    	<label for="choice{{ var.id }}">{{ var }}</label><br />
+	{% endfor %}
+	<br>
+	<input type="hidden" name="task_typeffefewrevw" value="1">
+	<input type="hidden" name="task_id" value="{{ task.id }}">
+	<input class="btn btn-primary" type="submit" value="Проверить" />
+	</form>
+{% else %}
+	{% if task_type_answ %}
+	<form action="/result/" method="post">
+	{% csrf_token %}
+	<input type="hidden" name="task_typeffefewrevw" value="2">
+	<input type="hidden" name="task_id" value="{{ task.id }}">
+	<input class="btn btn-primary" type="submit" value="Узнать правильный ответ" />
+	</form>
+	{% else %}
+	{%	endif	%}
+{%	endif	%}
+{% endblock %}
+
+
+
+

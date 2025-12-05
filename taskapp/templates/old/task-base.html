@@ -1,0 +1,15 @@
+{% extends "polls/index.html" %}
+{% block content %}
+<div class="block-title">
+<h1>Проверь свои знания по геометрии{% block title %}{% endblock %} </h1>
+</div>
+<div class="block-task">
+{% block task %}
+{% endblock %}
+</div>
+<div class="block-vars">
+{% block vars %}
+{% endblock %}
+</div>
+<a href="/" class="btn btn-default" >Другой вопрос</a>
+{% endblock %}

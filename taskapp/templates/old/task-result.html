@@ -1,0 +1,52 @@
+{% extends "polls/task-base.html" %}
+
+{% block title %}
+: результат
+{% endblock %}
+
+{% block task %}
+{% if task %}
+    <h4>№{{ task.id }}. Вопрос: {{ task.task_text }}</h4>
+{% else %}
+    <p>No cases are available.</p>
+{% endif %}
+{%	if task.task_img_link %}
+<img src="{{ task.task_img_link }}" alt="My image"/><br>
+{%	endif	%}
+{%	if task.image %}
+{% load static %}
+<img src="{{ task.image.url }}" alt="My image"/>
+{%	endif	%}
+{% endblock %}
+{% block vars %}
+{% if task_type_test %}
+	<div class="true-false">
+	{% if is_ok %}
+	<div class="your-choice">
+		<p>
+		<h4>Ваш ответ:</h4>
+		<strong>{{ choice }}</strong></p>
+	    <p class="bg-success"><strong>Верно!</strong></p>
+	{% else %}
+		<h4>Варианты ответа:</h4>
+		<ul class="list-tasks">
+			{% for var in task.variant.all %}
+ 	   			<li>{{ var }}</li>
+			{% endfor %}
+		</ul>
+		<p>
+		<h4>Ваш ответ:</h4>
+		<strong>{{ choice }}</strong></p>
+		<div class="false">
+ 	   	<p class="bg-danger"><strong>Неправильно!</strong></p>
+ 	   	<p class="bg-success"><strong>Правильный ответ: </strong>{{ task.variant_true }}</p>
+		</div>
+	{% endif %}
+	</div>
+{% else %}
+	{% if task_type_answ %}
+		<p class="bg-success"><strong>Правильный ответ: </strong>{{ task.var_text }}</p>
+	{% else %}
+	{%	endif	%}
+{%	endif	%}
+{% endblock %}

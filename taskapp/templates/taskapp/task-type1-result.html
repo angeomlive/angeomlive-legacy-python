@@ -1,0 +1,66 @@
+{% extends task_wrap %}
+
+{% block task_content %}
+{% if task.image %}
+	<div class="t-container t-align_center task-text-content">
+	<div class="t-col t-col_5 t-col-no-margin-bottom">
+		<img src="{{task.image.url }}" imgfiled="img" class="t165__img ">
+	</div>
+	<div class="t-col t-col_7 t-align_left t-col-no-margin-bottom">
+		<div field="text" class="t-text t-text_md  ">
+			<div class="task-number">Вопрос № {{task_option.number}}</div>
+			<div class="task-text t-text-impact_xs">
+				{{ task.text }}
+			</div>
+			<div class="task-true-answer t-text-impact_xs">
+				<div>Правильный ответ:</div>
+				{% if task.answer %}
+					<div class="task-true-answer-text t-text t-text_lg">{{task.answer}}</div>
+				{% endif %}
+			</div>
+			{% if task.explanation %}
+			<div class="task-explanation t-text-impact_xs">
+				<div>Пояснение:</div>
+				<div class="task-explanation-text t-text t-text_sm">{{task.explanation}}</div>
+				{% if task.explanation_image %}
+					<div class="task-explanation-image">
+						<img src="{{task.explanation_image.url }}" imgfiled="img" class="t165__img ">
+					</div>
+				{% endif %}	
+			</div>
+			{% endif %}
+		</div>
+	</div>
+</div>
+
+{%	else %}
+	<div class="t-container t-align_center task-text-content">
+	<div class="t-col t-col_10 t-prefix_1 t-col-no-margin-bottom">
+		<div field="text" class="t-text t-text_md  ">
+			<div class="task-number">Вопрос № {{task_option.number}}</div>
+			<div class="task-text t-text-impact_xs">
+				{{ task.text }}
+			</div>
+			<div class="task-true-answer t-text-impact_xs">
+				<div>Правильный ответ:</div>
+				{% if task.answer %}
+					<div class="task-true-answer-text t-text t-text_lg">{{task.answer}}</div>
+				{% endif %}
+			</div>
+			{% if task.explanation %}
+			<div class="task-explanation t-text-impact_xs">
+				<div>Пояснение:</div>
+				<div class="task-explanation-text t-text t-text_sm">{{task.explanation}}</div>
+				{% if task.explanation_image %}
+					<div class="task-explanation-image">
+						<img src="{{task.explanation_image.url }}" imgfiled="img" class="t165__img ">
+					</div>
+				{% endif %}	
+			</div>
+			{% endif %}
+		</div>
+	</div>
+</div>
+
+{% endif %}
+{% endblock %}

@@ -1,0 +1,131 @@
+{% extends "taskapp/task-random.html" %}
+
+{% block task_content %}
+{% if task.image %}
+	<div class="t-container t-align_center task-text-content">
+	<div class="t-col t-col_6 ">
+		<img src="{{task.image.url }}" imgfiled="img" class="t165__img ">
+	</div>
+	<div class="t-col t-col_6 t-align_left ">
+		<div field="text" class="t-text t-text_md  ">
+			<div class="task-number">Вопрос № {{task_option.number}}</div>
+			<div class="task-text t-text-impact_xs">
+			{{ task.text }}
+			</div>
+			{% if choice_id == task.variant_true.id  %}
+				<div class="btn-true-answer">
+					<div class="variants-list-wrap-with-image padding-from-image">
+						<div class="variants-list variants-list-result">
+							<ul>
+								{% for variant in task_variants.all %}
+									{% if variant.id == true_variant_id %}
+										<li><span style="color: #0ab10d;">{{ variant.text }}</span></li>
+									{%	else %}
+										<li>{{ variant.text }}</li>
+									{% endif %}
+								{% endfor %}
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="variants-list-wrap-with-image">
+					<div class="variants-list">
+						<div class="result-true">
+							<p class="bg-success">Правильно!</p>
+						</div>
+					</div>	
+				</div>
+			{%	else %}
+				<div class="btn-true-answer">
+					<div class="variants-list-wrap-with-image padding-from-image">
+						<div class="variants-list variants-list-result">
+							<ul>
+								{% for variant in task_variants.all %}
+									{% if variant.id == true_variant_id %}
+										<li><span style="color: #0ab10d;">{{ variant.text }}</span></li>
+									{% elif variant.id == your_variant_id %}
+										<li><span style="color: #ff2222">{{ variant.text }}</span></li>
+									{%	else %}
+										<li>{{ variant.text }}</li>
+									{% endif %}
+								{% endfor %}
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="variants-list-wrap-with-image ">
+					<div class="variants-list">
+						<div class="result-false">
+							<p class="bg-danger">Неверно!</p>
+							<p>Правильный ответ: <span style="color: #0ab10d;">{{ task.variant_true.text }}</span></p>
+						</div>
+					</div>
+				</div>
+			{% endif %}
+		</div>
+	</div>
+</div>
+{%	else %}
+	<div class="t-container t-align_center task-text-content">
+	<div class="t-col t-col_10 t-prefix_1">
+		<div field="text" class="t-text t-text_md  ">
+			<div class="task-number">Вопрос № {{task_option.number}}</div>
+			<div class="task-text t-text-impact_xs">
+			{{ task.text }}
+			</div>
+			
+			{% if choice_id == task.variant_true.id  %}
+				<div class="btn-true-answer">
+					<div class="variants-list-wrap">
+						<div class="variants-list variants-list-result">
+							<ul>
+								{% for variant in task_variants.all %}
+									{% if variant.id == true_variant_id %}
+										<li><span style="color: #0ab10d;">{{ variant.text }}</span></li>
+									{%	else %}
+										<li>{{ variant.text }}</li>
+									{% endif %}
+								{% endfor %}
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="variants-list-wrap">
+					<div class="variants-list">
+						<div class="result-true">
+							<p class="bg-success">Правильно!</p>
+						</div>
+					</div>	
+				</div>
+			{%	else %}
+				<div class="btn-true-answer">
+					<div class="variants-list-wrap">
+						<div class="variants-list variants-list-result">
+							<ul>
+								{% for variant in task_variants.all %}
+									{% if variant.id == true_variant_id %}
+										<li><span style="color: #0ab10d;">{{ variant.text }}</span></li>
+									{% elif variant.id == your_variant_id %}
+										<li><span style="color: #ff2222">{{ variant.text }}</span></li>
+									{%	else %}
+										<li>{{ variant.text }}</li>
+									{% endif %}
+								{% endfor %}
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="variants-list-wrap">
+					<div class="variants-list">
+						<div class="result-false">
+							<p class="bg-danger">Неверно!</p>
+							<p>Правильный ответ: <span style="color: #0ab10d;">{{ task.variant_true.text }}</span></p>
+						</div>
+					</div>
+				</div>
+			{% endif %}
+		</div>
+	</div>
+</div>
+{% endif %}
+{% endblock %}

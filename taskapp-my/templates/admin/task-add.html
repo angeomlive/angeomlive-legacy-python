@@ -1,0 +1,37 @@
+{% extends 'adminplus/base.html' %}
+
+{% block content %}
+<div class="t-container">
+	<link rel="stylesheet" type="text/css" href="/static/admin/css/base.css">
+	<link rel="stylesheet" type="text/css" href="/static/admin/css/forms.css">	
+	<form enctype="multipart/form-data" method="post" id="task_form" novalidate="">
+	{% csrf_token %}
+    <div>
+        <fieldset class="module aligned ">
+            <div class="form-row field-section">
+                <div>
+                    <label for="id_section">Type:
+                    </label>
+                    <div class="related-widget-wrapper">
+                        <ol>	
+							{% for type in types.all %}
+								<li style=" display: table;">
+								<input type="radio" name="type" id="type-{{ type.id }}" 
+								value="{{ type.id }}" required />
+								<label for="type-{{ type.id }}">{{ type.name }}</label><br />
+								</li>
+							{% endfor %}
+						</ol>
+                    </div>
+                </div>
+            </div>
+        </fieldset>
+        <div class="submit-row">
+			<input type="hidden" name="add_task_option" value="0">
+			<input class="btn btn-primary" type="submit" value="Дальше" />
+        </div>
+    </div>
+</form>
+</div>
+	
+{% endblock %}

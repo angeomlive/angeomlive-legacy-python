@@ -1,0 +1,19 @@
+{# myapp/admin/add-task.html #}
+{% extends 'adminplus/base.html' %}
+
+{% block content %}
+	<form action="" method="post" required>
+		{% csrf_token %}
+		<ol>
+			{% for section in sections.all %}
+    			<li>
+    				<input type="radio" name="task_section" id="choice{{ section.id }}" value="{{ section.id }}" required />
+    				<label for="choice{{ section.id }}">{{ section.name }}</label>
+    			</li>
+			{% endfor %}
+		</ol>
+		<input type="hidden" name="add_task_option" value="2">
+		<input type="hidden" name="task_id" value="{{ task_id }}">
+		<input class="btn btn-primary" type="submit" value="Дальше" />
+	</form>
+{% endblock %}

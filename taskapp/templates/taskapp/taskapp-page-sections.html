@@ -1,0 +1,26 @@
+{% extends "taskapp/taskapp-base.html" %}
+
+{% block title %}
+{{title}}
+{% endblock %}
+
+{% block body_main %}
+<a href="/" id="site-scroll-top" class="show">
+	<img src="/media/home.png" imgfiled="img" >
+	<i class="fa fa-home fa-fw" aria-hidden="true">
+	<span class="fa fa-chevron-up"></span>
+</a>
+<div class="t211">
+<div class="t-container">
+{% for section in sections %}
+	<p>{{ section.id }}: {{ section.name }} - parent: {{ section.parent.id }}: {{ section.parent.name }}</p>
+{% endfor %}
+<h2>Main parents:</h2>
+{% for section in sections %}
+	{% if not section.parent %}
+		<p>{{ section.id }}: {{ section.name }} - parent: {{ section.parent.id }}: {{ section.parent.name }}</p>
+	{% endif %}
+{% endfor %}
+</div>
+</div>
+{% endblock %}

@@ -1,0 +1,30 @@
+{% extends "taskapp/taskapp-base.html" %}
+
+{% block title %}
+{{title}}
+{% endblock %}
+
+{% block body_main %}
+<div class="t211">
+<div class="t-container">
+{% for section in sections %}
+	{% if not section.parent %}
+		<div class="t211__col t-col t-col_6">
+			{% if section.image %}
+				<a href="/section/{{ section.id }}/">
+					<div class="t211__img" bgimgfield="img2" style="background-image:url('{{section.image.url }}'); ">
+					</div>
+				</a>
+			{% endif %}	
+			<div class="t211__textwrapper">
+				<a href="/section/{{ section.id }}/">
+					<div class="t-title t-descr_xxxl t211__title" field="title2">{{ section.name }}</div>
+					<div class="t-descr t-descr_xs t211__text" field="text2"></div> 
+				</a>
+			</div>
+		</div>
+	{% endif %}
+{% endfor %}
+</div>
+</div>
+{% endblock %}

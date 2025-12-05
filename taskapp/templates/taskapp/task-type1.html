@@ -1,0 +1,46 @@
+{% extends task_wrap %}
+
+{% block task_content %}
+{% if task.image %}
+	<div class="t-container t-align_center task-text-content">
+	<div class="t-col t-col_5 t-col-no-margin-bottom ">
+		<img src="{{task.image.url }}" imgfiled="img" class="t165__img ">
+	</div>
+	<div class="t-col t-col_7 t-align_left t-col-no-margin-bottom">
+		<div field="text" class="t-text t-text_md  ">
+			<div class="task-number">Вопрос № {{task_option.number}}</div>
+			<div class="task-text t-text-impact_xs">
+			{{ task.text }}
+			</div>
+			<div class="btn-true-answer">
+				<form method="post">
+					{% csrf_token %}
+					<input type="hidden" name="task_number" value="{{ task_option.number }}">
+					<input class="btn btn-primary" type="submit" value="Узнать правильный ответ" />
+				</form>
+			</div>
+		</div>
+	</div>
+	</div>
+
+{%	else %}
+	<div class="t-container t-align_center task-text-content">
+	<div class="t-col t-col_10 t-col-no-margin-bottom t-prefix_1">
+		<div field="text" class="t-text t-text_md  ">
+			<div class="task-number">Вопрос № {{task_option.number}}</div>
+			<div class="task-text t-text-impact_xs">
+				{{ task.text }}
+			</div>
+			<div class="btn-true-answer">
+				<form method="post">
+					{% csrf_token %}
+					<input type="hidden" name="task_number" value="{{ task_option.number }}">
+					<input class="btn btn-primary" type="submit" value="Узнать правильный ответ" />
+				</form>
+			</div>
+		</div>
+	</div>
+	</div>
+
+{% endif %}
+{% endblock %}

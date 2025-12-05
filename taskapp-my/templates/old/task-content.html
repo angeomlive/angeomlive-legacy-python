@@ -1,0 +1,42 @@
+{% extends "taskapp/task-random.html" %}
+
+{% block task_content %}
+<div class="t-container t-align_center">
+	  	<div class="t-col t-col_10 t-prefix_1">
+			<div field="text" class="t-text t-text_md  ">
+			<div class="task-variants t-text-impact_xs">
+				{% if task.image %}
+					<div class="t-container task-text-content">
+						<div class="t-col t-col_6 ">
+							<img src="{{task.image.url }}" imgfiled="img" class="t165__img ">
+						</div>
+						<div class="t-col t-col_6 ">
+							<div field="text" class="t-text t-text_md  ">
+							<div class="task-number">Вопрос № {{task_number}}<br>
+							</div>
+							<div class="task-text t-text-impact_xs">
+				{% else %}
+					<div class="t-container t-align_center task-text-content">
+						<div class="t-col t-col_10 t-prefix_1">
+							<div field="text" class="t-text t-text_md  ">
+							<div class="task-number">Вопрос № {{task_number}}<br>
+							</div>
+							<div class="task-text t-text-impact_xs">
+				{% endif %}
+				{% block task_all_text %}
+				{% endblock %}
+				
+				{% block task_varints %}
+				{% endblock %}
+				</div>
+				</div>
+				</div>
+			</div>
+				
+			
+			
+			</div>
+			</div>
+		</div>
+	</div>
+{% endblock %}

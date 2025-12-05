@@ -1,0 +1,28 @@
+{% extends "taskapp/body.html" %}
+{% block tab_title %}
+{{title}}: {{subtitle}}
+{% endblock %}
+
+{% block body_header %}
+	<div class="t-container t-align_center">
+    	<div class="t-col t-col_10 t-prefix_1">      
+      		<div class=" title-main t030__title t-title t-title_xxs" field="title">
+      			<a href="/">{{title}}</a>
+      		</div>
+      		<div class="t-descr t-descr_md" field="descr">
+      			{{subtitle}}
+      		</div>
+      	</div>
+  	</div>
+{% endblock %}
+
+{% block body_footer %}
+	<div class="t-container t-align_center">
+		<div class="t-col t-col_10 t-prefix_1">
+			<div class="footer-copy t-text t-text_xs" field="descr">
+				© Механико-математический факультет, Кафедра высшей геометрии и топологии, 2016
+				<br>e-mail: ssmirnov at higeom.math.msu.su
+			</div>		
+		</div>
+	</div>
+{% endblock %}

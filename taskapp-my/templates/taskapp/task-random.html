@@ -1,0 +1,25 @@
+{% extends "taskapp/taskapp-base.html" %}
+
+{% block body_main %}
+  <div class="t-container  t-align_center  break-line">
+    <div class="t-col t-col_10 t-prefix_1">
+      <div class="t029__linewrapper" style="opacity:0.2;">
+        <div class="t029__opacity t029__opacity_left" style="background-image: -moz-linear-gradient(right, #000000, rgba(0,0,0,0)); background-image: -webkit-linear-gradient(right, #000000, rgba(0,0,0,0)); background-image: -o-linear-gradient(right, #000000, rgba(0,0,0,0)); background-image: -ms-linear-gradient(right, #000000, rgba(0,0,0,0));"></div>
+        <div class="t029__line" style="background: #000000;"></div>
+        <div class="t029__opacity t029__opacity_right" style="background-image: -moz-linear-gradient(left, #000000, rgba(0,0,0,0)); background-image: -webkit-linear-gradient(left, #000000, rgba(0,0,0,0)); background-image: -o-linear-gradient(left, #000000, rgba(0,0,0,0)); background-image: -ms-linear-gradient(left, #000000, rgba(0,0,0,0));"></div>
+      </div>
+    </div>
+  </div>
+<div class="task-content">
+{% block task_content %}
+{% endblock %}
+</div>
+<div class="t-container t-align_center">
+		<div class="t-col t-col_10 t-prefix_1">
+			<div class="t051__text t-text t-text_md" field="text">
+			<a href="/section/{{task_option.section.slug}}/" class="btn btn-default" >Попробовать другой вопрос</a>
+			</div>
+		</div>
+	</div>
+
+{% endblock %}

@@ -1,0 +1,25 @@
+{% extends "taskapp/taskapp-base.html" %}
+
+{% block title %}
+{{title}}
+{% endblock %}
+
+{% block body_main %}
+<div class="t211">
+<div class="t-container">
+{% for section in sections %}
+<div class="t211__col t-col t-col_6">
+	<a href="/section/{{ section.slug }}/">
+    	<div class="t211__img" bgimgfield="img2" style="background-image:url('{{section.image.url }}'); "></div>
+    </a>
+    <div class="t211__textwrapper">
+    	<a href="/section/{{ section.slug }}/">
+        	<div class="t-title t-descr_xxxl t211__title" field="title2">{{ section.name }}</div>
+            <div class="t-descr t-descr_xs t211__text" field="text2"></div> 
+        </a>
+    </div>
+</div> 
+{% endfor %}
+</div>
+</div>
+{% endblock %}

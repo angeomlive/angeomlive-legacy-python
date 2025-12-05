@@ -1,0 +1,298 @@
+html, body, div, span, applet, object, iframe,
+ h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+  a, abbr, acronym, address, big, cite, code,
+   del, dfn, em, img, ins, kbd, q, s, samp,
+    small, strike, strong, sub, sup, tt, var,
+     b, u, i, center, dl, dt, dd, ol, ul, li,
+      fieldset, form, label, legend, table, caption,
+       tbody, tfoot, thead, tr, th, td, article, aside,
+        canvas, details, embed, figure, figcaption, footer,
+         header, hgroup, menu, nav, output, ruby, section, summary,
+          time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+    font-family: inherit;
+    font-size: 100%;
+    font-style: inherit;
+    font-weight: inherit;
+}
+
+body {
+    line-height: 1.7;
+    color: #555;
+    font-family: Open Sans;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 14px;
+    background: #fff;
+        
+}
+
+.main {
+	background-color: #fff;
+    border: 1px solid #dcdcdc;
+}
+
+
+
+
+li a {
+    color: green;
+}
+
+h1,h2,h3,h4,h5,h6{color:#333;margin:0 0 20px;padding:0}
+h1 a,h2 a,h3 a,h4 a,h5 a,h6 a{color:#444}
+h1 a:hover,h2 a:hover,h3 a:hover,h4 a:hover,h5 a:hover,h6 a:hover{/*color:#2996cc;*/}
+h1{font-size:45px;font-weight:300;line-height:55px;letter-spacing:-1px;color:#444444}
+h1 strong{font-weight:400}
+h2{font-size:32px;font-weight:400;line-height:42px;letter-spacing:-1px;color:#444444}
+h3{font-size:21px;font-weight:400;line-height:31px;letter-spacing:0;color:#333333}
+h4{font-size:17px;font-weight:400;line-height:23px;letter-spacing:0;color:#555}
+h5{font-size:24px;font-weight:300;line-height:32px;letter-spacing:0;color:#444444}
+h6{font-size:16px;font-weight:300;line-height:23px;letter-spacing:0;color:#6d7579}
+
+
+
+.wrap{
+	margin: 0 auto;
+}
+
+.content{
+	margin: 0 auto;
+    padding: 0 60px 100px;
+    width: 100%;
+    max-width: 900px;
+}
+
+
+
+p {
+    margin: 0 0 10px;
+	padding: 15px;
+}
+
+.list-tasks {
+	margin-left:20px
+	
+}
+.block-task, .block-vars {
+	margin: 0 0 15px;
+}
+
+.header-name{
+	
+}
+
+.header-name-logo{
+	
+}
+
+.header-name-text a{
+    font-size: 40px;
+    font-weight: normal;
+    height: 44px;
+    line-height: 44px;
+    margin-bottom: 5px;
+    margin-top: 20px;
+    text-align: center;
+}
+
+#outer-wrap{
+	margin-top: 30px;
+}
+
+#wrap{
+}
+
+.task-content{
+	margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+
+header{
+	margin-bottom: 15px;
+}
+
+main{
+	margin-top: 0px;
+	margin-bottom: 150px;
+}
+
+footer {
+	margin-bottom: 45px;
+}
+
+.logo {
+	float: left;
+	
+}
+
+.logo img {
+	padding: 15px 30px;
+	
+}
+
+.text {
+	float: left;
+}
+
+
+.task-number {
+	color: #444;
+	font-size: 14px;
+    margin-bottom: 10px;
+}
+
+
+.task-variants {
+}
+
+.true-answer-text{
+	color: #0ab10d;
+}
+
+.t029__container {
+    text-align: center;
+    padding-bottom: 30px;
+}
+
+.footer-copy{
+	color: #555;
+}
+
+.btn {
+    display: inline-block;
+    padding: 9px 15px;
+    margin-bottom: 0;
+    font-size: 16px;
+    font-family: 'Open Sans', serif;
+    font-weight: 300;
+    line-height: 1.5;
+    border-radius: 3px;
+}
+
+
+.task-text, .task-true-answer, .task-explanation{
+	margin-bottom: 30px;
+}
+
+.task-true-answer-text{
+	color: rgb(2, 150, 1);
+}
+
+.title-main a{
+	color: #000000;
+}
+
+.title-main a: hover{
+	color: #333;
+}
+
+.variants-list-wrap{
+	text-align: center;
+}
+.variants-list-wrap-with-image{
+	text-align: left;
+}
+
+.variants-list {
+	display: inline-block; /*располагаем блоки в ряд по горизонтали*/
+}
+
+.variants-list ul{
+    list-style-type: none;
+	text-align: left;
+	margin-bottom: 30px;
+}
+
+.variants-list input{
+    float: left;
+    margin: 10px 10px 0 0;
+}
+
+.variants-list label{
+	cursor: pointer;
+}
+
+
+.variants-list-result ul{
+	list-style-type: circle;
+}
+
+.variant-true li {
+	color: #0ab10d;
+}
+
+
+.bg-success, .bg-danger {
+    padding: 15px 30px;
+}
+
+.padding-from-image{
+	padding-left: 25px;
+}
+
+.variants-list ul li {
+	margin-bottom: 10px;
+}
+
+.MathJax_Display{
+	margin: 0;
+	display: inline!important;
+}
+
+
+
+
+
+.button-submit , .task-variants-list, .task-result{
+	margin-bottom: 30px;
+}
+
+.task-variants-list ul li{
+	list-style-type: none;
+}
+
+
+.task-variants-list-result ul li{
+	list-style-type: circle;
+}
+
+.t-col-no-margin-bottom{
+	margin-bottom: 0;
+}
+
+.task-variants-list-result{
+	margin-left: 25px;
+}
+
+.task-variants-list ul {
+	display: inline-block;
+}
+
+.task-variants-list ul li label{
+	    cursor: pointer;
+}
+
+ input[type=radio].me-rad-but {
+    float: left;
+    margin: 10px 10px 0 0;
+}
+
+.task-explanation-image{
+	margin: 15px 0 15px;
+}
+
+
+
+/* Footer > Back To Top Button */
+#site-scroll-top {position: fixed;left: 10px;bottom: 40px;color: #898989;height: 60px;line-height: 60px;width: 60px;font-size: 16px;border-radius: 50%;background: #337ab7;border: 3px solid #fff;text-align: center;z-index: 998;visibility: hidden;opacity: 0;transition: all 0.25s ease-in-out;box-sizing: content-box;-moz-box-sizing: content-box;-webkit-box-sizing: content-box;}
+#site-scroll-top:hover { border-color: transparent; text-decoration: none; color: #fff; }
+#site-scroll-top.show { display: block; visibility: visible; opacity: 1; }
+#site-scroll-top img {width: 40px; padding-top: 8px;}

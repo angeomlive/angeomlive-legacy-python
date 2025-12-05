@@ -1,0 +1,29 @@
+{% extends "taskapp/taskapp-base.html" %}
+
+{% block title %}
+{{title}}
+{% endblock %}
+
+{% block body_main %}
+<div class="t-container">
+<p>Тестовая страница</p>
+<p>{{ text }}</p>
+
+<table class="table table-striped">
+	<tbody>
+		{% for task in tasks %}
+			<tr>
+				<th scope="row">{{task.id}}</th>
+				<td>Mark</td>
+				<td>Otto</td>
+				<td><a href="test/?task={{task.id}}">Редактировать</a></td>
+			</tr> 
+		{% endfor %}
+	</tbody>
+</table>
+
+
+
+
+</div>
+{% endblock %}

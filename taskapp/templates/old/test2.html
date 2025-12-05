@@ -1,0 +1,18 @@
+{# myapp/admin/add-task.html #}
+{% extends 'adminplus/base.html' %}
+
+{% block content %}
+	<h3>Выберете тип вопроса, который вы хотите создать</h3>
+	$$$$ {{title}}
+	<form action="/admin/add-task/" method="post" required>
+	{% csrf_token %}
+    	<input type="radio" name="choice-type" id="choice" value="id-" required />
+    	<label for="choice">lable</label><br />
+    	<input type="radio" name="choice-type" id="choice" value="id-" required />
+    	<label for="choice">lable</label><br />
+	<br>
+	<input type="hidden" name="type_id" value="4453">
+	<input class="btn btn-primary" type="submit" value="Дальше" />
+	</form>
+	
+{% endblock %}

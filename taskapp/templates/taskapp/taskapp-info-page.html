@@ -1,0 +1,21 @@
+{% extends "taskapp/taskapp-base.html" %}
+
+{% block title %}
+{{title}}
+{% endblock %}
+
+{% block body_main %}
+<a href="/" id="site-scroll-top" class="show">
+	<img src="/media/home.png" imgfiled="img" >
+	<i class="fa fa-home fa-fw" aria-hidden="true">
+	<span class="fa fa-chevron-up"></span>
+</a>
+<div class="t211">
+<div class="t-container info-text">
+	<div class="t-col t-col_8 t-prefix_2">
+		<div field="text" class="t-text t-text_md  ">
+			{{info_text}}
+		</div>
+	</div>
+</div>
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends "taskapp/task-content.html" %}
+
+{% block task_all_text %}
+{{ task.text }}
+{% endblock %}
+
+
+
+{% block task_varints %}
+<div class="btn-true-answer">
+<form action="/section/{{section}}/" method="post">
+	{% csrf_token %}
+	<input type="hidden" name="task_id" value="{{ task_id }}">
+	<input class="btn btn-primary" type="submit" value="Узнать правильный ответ" />
+</form>
+</div>
+{% endblock %}

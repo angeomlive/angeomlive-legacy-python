@@ -1,0 +1,120 @@
+{% extends task_wrap %}
+
+{% block task_content %}
+{% if task.image %}
+	<div class="t-container t-align_center task-text-content">
+	<div class="t-col t-col_5 t-col-no-margin-bottom">
+		<img src="{{task.image.url }}" imgfiled="img" class="t165__img ">
+	</div>
+	<div class="t-col t-col_7 t-align_left t-col-no-margin-bottom">
+		<div field="text" class="t-text t-text_md  ">
+			<div class="task-number">Вопрос № {{task_option.number}}</div>
+			<div class="task-text t-text-impact_xs">
+				{{ task.text }}
+			</div>
+			<div class="task-variants-list task-variants-list-result">
+				<ul>
+					{% for variant in task_variants.all %}
+						{% if variant.id == task.variant_true.id %}
+							<li><span style="color: #0ab10d;">{{ variant.text }}</span></li>
+						{%	else %}
+							{% if variant.id == choice_id %}
+								<li><span style="color: #ff2222">{{ variant.text }}</span></li>
+							{%	else %}
+								<li>{{ variant.text }}</li>
+							{% endif %}
+						{% endif %}
+					{% endfor %}
+				</ul>
+			</div>
+			<div class="task-result">
+				{% if choice_id == task.variant_true.id  %}
+					<div class="result-true">
+						<p class="bg-success">Правильно!</p>
+					</div>
+				{%	else %}
+					<div class="result-false">
+						<p class="bg-danger">Неверно!</p>
+					</div>
+				{% endif %}
+			</div>
+			
+			{% if choice_id != task.variant_true.id  %}
+				<div class="task-true-answer">
+					<div>Правильный ответ:</div>
+					<div class="task-true-answer-text">{{ task.variant_true.text }}</div>
+				</div>
+			{% endif %}
+			
+			{% if task.explanation %}
+			<div class="task-explanation">
+				<div>Пояснение:</div>
+				<div class="task-explanation-text t-text t-text_sm">{{task.explanation}}</div>
+				{% if task.explanation_image %}
+					<div class="task-explanation-image">
+						<img src="{{task.explanation_image.url }}" imgfiled="img" class="t165__img ">
+					</div>
+				{% endif %}	
+			</div>
+			{% endif %}
+		</div>
+	</div>
+</div>
+{%	else %}
+	<div class="t-container t-align_center task-text-content">
+	<div class="t-col t-col_10 t-prefix_1 t-col-no-margin-bottom">
+		<div field="text" class="t-text t-text_md  ">
+			<div class="task-number">Вопрос № {{task_option.number}}</div>
+			<div class="task-text t-text-impact_xs">
+				{{ task.text }}
+			</div>
+			<div class="task-variants-list task-variants-list-result">
+				<ul>
+					{% for variant in task_variants.all %}
+						{% if variant.id == task.variant_true.id %}
+							<li><span style="color: #0ab10d;">{{ variant.text }}</span></li>
+						{%	else %}
+							{% if variant.id == choice_id %}
+								<li><span style="color: #ff2222">{{ variant.text }}</span></li>
+							{%	else %}
+								<li>{{ variant.text }}</li>
+							{% endif %}
+						{% endif %}
+					{% endfor %}
+				</ul>
+			</div>
+			<div class="task-result">
+				{% if choice_id == task.variant_true.id  %}
+					<div class="result-true">
+						<p class="bg-success">Правильно!</p>
+					</div>
+				{%	else %}
+					<div class="result-false">
+						<p class="bg-danger">Неверно!</p>
+					</div>
+				{% endif %}
+			</div>
+			
+			{% if choice_id != task.variant_true.id  %}
+				<div class="task-true-answer">
+					<div>Правильный ответ:</div>
+					<div class="task-true-answer-text">{{ task.variant_true.text }}</div>
+				</div>
+			{% endif %}
+			
+			{% if task.explanation %}
+			<div class="task-explanation">
+				<div>Пояснение:</div>
+				<div class="task-explanation-text t-text t-text_sm">{{task.explanation}}</div>
+				{% if task.explanation_image %}
+					<div class="task-explanation-image">
+						<img src="{{task.explanation_image.url }}" imgfiled="img" class="t165__img ">
+					</div>
+				{% endif %}	
+			</div>
+			{% endif %}
+		</div>
+	</div>
+</div>
+{% endif %}
+{% endblock %}

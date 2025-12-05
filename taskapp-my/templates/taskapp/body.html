@@ -1,0 +1,23 @@
+{% extends "taskapp/index.html" %}
+{% block body %}
+<body>
+<div class="CCCCcontainer">
+<div id="outer-wrap" class="clr">
+<div id="wrap" class="clr">
+	<header>
+				{% block body_header %}
+				{% endblock %}
+	</header> 
+	<main>
+				{% block body_main %}
+				{% endblock %}
+	</main>
+	<footer>
+				{% block body_footer %}
+				{% endblock %}
+	</footer>
+	    </div><!-- #wrap -->
+</div><!-- .outer-wrap -->
+</div> 
+</body>
+{% endblock %}

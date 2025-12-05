@@ -1,0 +1,14 @@
+{% extends 'adminplus/base.html' %}
+
+{% block content %}
+<div class="t-container">
+	<link rel="stylesheet" type="text/css" href="/static/admin/css/base.css">
+	<link rel="stylesheet" type="text/css" href="/static/admin/css/forms.css">
+	<p><a href="/task/{{task_option.number}}/">Посмотреть вопрос</a></p>
+	<p><a href="/admin/task-edit/?task={{task_option.number}}">Редактировать еще раз?</a></p>
+	<p><a href="/admin/taskapp/task/">Список всех вопросов</a></p>
+	<p><a href="/admin/add-task/">Добавить новый вопрос</a></p>
+	
+</div>
+
+{% endblock %}

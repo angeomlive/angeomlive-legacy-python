@@ -1,0 +1,114 @@
+{% extends 'adminplus/base.html' %}
+
+{% block content %}
+<div class="t-container">
+	<link rel="stylesheet" type="text/css" href="/static/admin/css/base.css">
+	<link rel="stylesheet" type="text/css" href="/static/admin/css/forms.css">	
+	<form enctype="multipart/form-data" method="post" id="task_form" novalidate="">
+	{% csrf_token %}
+    <div>
+        <fieldset class="module aligned ">
+        	<div class="form-row field-number">
+    			<div>
+        			<label class="required" for="id_number">Number:</label>
+        			{{task_option.number}}
+    			</div>
+			</div>
+            <div class="form-row field-section">
+                <div>
+                    <label for="id_section">Section:
+                    </label>
+                    <div class="related-widget-wrapper">
+                        <select id="id_section" name="section">
+                        	<option value="">---------
+                            </option>
+                        	{% for section in sections %}
+                            	{% if section.id == task_option.section.id %}
+    								<option value="{{section.id}}" selected="selected">{{section.name}}</option>
+    							{%	else %}
+    								<option value="{{section.id}}">{{section.name}}</option>
+    							{% endif %}
+							{% endfor %}
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="form-row field-published">
+                <div class="checkbox-row">
+                	{% if task_option.published %}
+    					<input checked="checked" id="id_published" name="published" type="checkbox">
+    				{%	else %}
+    					<input id="id_published" name="published" type="checkbox">
+    				{% endif %}
+                    <label class="vCheckboxLabel" for="id_published">Published
+                    </label>
+                </div>
+            </div>
+            <div class="form-row field-text">
+            	<label class="required" for="id_text">Text:</label>
+                <textarea class="vLargeTextField" cols="40" id="id_text" name="text" rows="10">{{task.text}}</textarea>
+        	</div>
+            <div class="form-row field-image">
+                <div>
+                    <label class="required" for="id_image">Image:</label>
+                    {% if task.image %}
+                    	<div class="" style="width: 60%;">
+                    	<img src="{{task.image.url }}" imgfiled="img" class="t165__img " style=" width: inherit;">
+                    	</div>
+                    {% endif %}
+                    <input id="id_image" name="image" type="file" required="">
+                </div>
+        	</div>	
+            
+            <div class="form-row field-variants">
+                <div>
+                	<label class="required" for="id_text">Variants:</label>
+                	<div style="float: left;">
+						<ol style=" margin: 0;">
+							{% for variant in variants %}
+								<li style=" float: initial; margin-bottom: 15px;">
+									<input class="vTextField" id="id-text-variant-{{variant.id}}" 
+									maxlength="500" name="variant-{{variant.id}}" type="text" value="{{variant.text}}">
+									{% if variant.id == task.variant_true.id %}
+										<input type="radio" name="variant-true" value="{{variant.id}}" required checked="checked">
+									{%	else %}
+										<input type="radio" name="variant-true" value="{{variant.id}}" required >
+									{% endif %}
+								</li>
+							{% endfor %}
+							{% for counter in list %}
+								<li style=" float: initial; margin-bottom: 15px;">
+									<input class="vTextField" id="id-text-variant-{{variant.id}}" 
+									maxlength="500" name="variant-{{counter}}" type="text" ">
+									<input type="radio" name="variant-true" value="{{counter}}" required >
+								</li>
+							{% endfor %}
+						</ol>
+					</div>
+                </div>
+            </div>
+            
+            <div class="form-row field-explanation">
+            	<label for="id_explanation">Explanation:</label>
+                <textarea class="vLargeTextField" cols="40" id="id_explanation" name="explanation" rows="10">{{task.explanation}}</textarea>
+        	</div>
+        	<div class="form-row field-image">
+				<label class="required" for="id_image">Explanation_image:</label>
+				{% if task.explanation_image %}
+					<div class="" style="width: 60%;">
+					<img src="{{task.explanation_image.url }}" imgfiled="img" class="t165__img " style=" width: inherit;">
+					</div>
+				{% endif %}
+				<input id="id_explanation_image" name="explanation_image" type="file" required="">
+        	</div>
+        </fieldset>
+        <div class="submit-row">
+        	<input type="hidden" name="add_task_option" value="1">
+			<input type="hidden" name="task_number" value="{{task_option.number}}">
+			<input class="btn btn-primary" type="submit" value="Сохранить">
+        </div>
+    </div>
+</form>
+</div>
+
+{% endblock %}

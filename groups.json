@@ -1,0 +1,50 @@
+[
+  {
+    "id": "quadric-surfaces",
+    "name": "Поверхности второго порядка",
+    "parent": null,
+    "image": "quadric-surfaces.png"
+  },
+  {
+    "id": "geometric-properties",
+    "name": "Геометрические свойства",
+    "parent": "quadric-surfaces",
+    "image": null
+  },
+  {
+    "id": "grp-find-by-pic",
+    "name": "Нахождение уравнения по картинке",
+    "parent": "quadric-surfaces",
+    "image": null
+  },
+  {
+    "id": "identify-by-image",
+    "name": "Определение названия по картинке",
+    "parent": "quadric-surfaces",
+    "image": null
+  },
+  {
+    "id": "identify-by-equation",
+    "name": "Определение названия по уравнению",
+    "parent": "quadric-surfaces",
+    "image": null
+  },
+  {
+    "id": "sections-parallel-to-coordinate-planes",
+    "name": "Сечения, параллельные координатным плоскостям",
+    "parent": "quadric-surfaces",
+    "image": null
+  },
+  {
+    "id": "lines-and-planes-in-space",
+    "name": "Прямые и плоскости в пространстве",
+    "parent": null,
+    "image": "lines-and-planes-in-space.png"
+  },
+  {
+    "id": "conic-sections",
+    "name": "Кривые второго порядка",
+    "parent": null,
+    "image": "conic-sections.png"
+  }
+]
